@@ -1,10 +1,8 @@
 const express = require('express');
+const router = require('./routes');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send("Darien Weller");
-});
-
+app.use('/', router)
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('Web Server is listening at port ' + (process.env.PORT || 3000));
